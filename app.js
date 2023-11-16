@@ -4,9 +4,9 @@ import "./App.css";
 
 const App = () => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "api_key",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
   });
-  const center = useMemo(() => ({ lat: 22.5836311, lng: 88.493644 }), []);
+  const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), []);
 
   console.log("check");
 
@@ -19,9 +19,7 @@ const App = () => {
           mapContainerClassName="map-container"
           center={center}
           zoom={10}
-        >
-          <Marker position={{ lat: 22.5836311, lng: 88.493644 }} />
-        </GoogleMap>
+        />
       )}
     </div>
   );
